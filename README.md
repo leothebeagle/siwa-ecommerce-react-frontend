@@ -1,0 +1,1 @@
+Siwa is a basic ecommerce site that provides the ecosystem for sellers and buyers to connect. 
