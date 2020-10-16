@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import SignUp from './SignUp';
 
 class Home extends Component {
     render() {
         return(
-            <h1>Homepage</h1>
+            <div>
+                <h1>Homepage</h1>
+                <SignUp />
+            </div>
         )
     }
 }
