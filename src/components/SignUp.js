@@ -4,7 +4,9 @@ class SignUp extends React.Component {
     
     state = {
         firstName: "Aziz",
-        lastName: "Kosber"
+        lastName: "Kosber",
+        password: "",
+        passwordConfirmation: ""
     }
 
     handleChange = event => {
@@ -18,8 +20,8 @@ class SignUp extends React.Component {
             <div>
                 <h4>Signup form</h4>
                 <form>
-                    <input type="text" name="firstName" value={this.state.firstName} onChange={event => this.handleChange(event)} />
-                    <input type="text" name="lastName" value={this.state.lastName} />
+                    <input onChange={this.handleChange} type="text" name="firstName" value={this.state.firstName} />
+                    <input onChange={this.handleChange} type="text" name="lastName" value={this.state.lastName} />
                 </form>
             </div>
         )
