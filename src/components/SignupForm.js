@@ -3,8 +3,9 @@ import React from 'react';
 class SignupForm extends React.Component {
     
     state = {
-        firstName: "Aziz",
-        lastName: "Kosber",
+        firstName: "",
+        lastName: "",
+        email:"",
         password: "",
         passwordConfirmation: ""
     }
@@ -14,14 +15,23 @@ class SignupForm extends React.Component {
             [event.target.name] : event.target.value
         })
     }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log(event.target.firstName.value);
+    }
     
     render() {
         return(
             <div>
                 <h4>Signup form</h4>
-                <form>
-                    <input onChange={this.handleChange} type="text" name="firstName" value={this.state.firstName} />
-                    <input onChange={this.handleChange} type="text" name="lastName" value={this.state.lastName} />
+                <form onSubmit={this.handleSubmit} >
+                    <input onChange={this.handleChange} type="text" name="firstName" value={this.state.firstName} placeholder="First Name" />
+                    <input onChange={this.handleChange} type="text" name="lastName" value={this.state.lastName} placeholder="Last Name"/>
+                    <input onChange={this.handleChange} type="email" name="email" value={this.state.email} placeholder="email"/>
+                    <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder="password"/>
+                    <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.password_confirmation} placeholder="password confirmationn"/>
+                    <button type="submit">Register</button>
                 </form>
             </div>
         )
