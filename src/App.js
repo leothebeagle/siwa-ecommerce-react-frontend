@@ -3,9 +3,7 @@ import Home from './components/Home'
 
 import {
   BrowserRouter as Router, 
-  Switch,
   Route, 
-  Link
 } from "react-router-dom"; 
 import SignupForm from './components/SignupForm';
 
