@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(event.target.firstName.value);
+        console.log(event.target.firstName);
     }
     
     render() {
@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
                     <input onChange={this.handleChange} type="text" name="lastName" value={this.state.lastName} placeholder="Last Name"/>
                     <input onChange={this.handleChange} type="email" name="email" value={this.state.email} placeholder="email"/>
                     <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder="password"/>
-                    <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.password_confirmation} placeholder="password confirmationn"/>
+                    <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.password_confirmation} placeholder="password confirmation"/>
                     <button type="submit">Register</button>
                 </form>
             </div>
