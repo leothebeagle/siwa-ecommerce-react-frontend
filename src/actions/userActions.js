@@ -10,7 +10,6 @@ function addUser(user) {
         fetch('http://localhost:3000/users', 
         {
           method: 'POST',  
-          mode: 'no-cors',
           headers: {
               'Content-Type': 'application/json'
           },
