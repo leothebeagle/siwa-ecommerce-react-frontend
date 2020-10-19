@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../containers/Navbar'
 
 class SignupForm extends React.Component {
     
@@ -24,6 +25,7 @@ class SignupForm extends React.Component {
     render() {
         return(
             <div>
+                <Navbar />
                 <h4>Signup form</h4>
                 <form onSubmit={this.handleSubmit} >
                     <input onChange={this.handleChange} type="text" name="firstName" value={this.state.firstName} placeholder="First Name" />
