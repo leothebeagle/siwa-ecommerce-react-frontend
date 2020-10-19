@@ -5,8 +5,8 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <h1>Homepage</h1>
                 <Navbar />
+                <h1>Homepage</h1>
             </div>
         )
     }
