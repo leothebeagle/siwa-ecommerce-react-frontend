@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
+import addUser from '../actions/userActions';
 
 class SignupPage extends React.Component {
 
@@ -38,7 +39,7 @@ class SignupPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addUser: user => dispatch({type: 'ADD_USER', payload: user})
+    addUser: user => dispatch(addUser(user))
 })
 
 export default connect(null, mapDispatchToProps)(SignupPage)
