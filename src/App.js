@@ -7,7 +7,6 @@ import {
   Switch
 } from "react-router-dom"; 
 
-import SignupForm from './components/SignupForm';
 import SignupPage from './containers/SignupPage';
 
 function App() {
