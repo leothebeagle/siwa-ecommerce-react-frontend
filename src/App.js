@@ -6,7 +6,9 @@ import {
   Route, 
   Switch
 } from "react-router-dom"; 
+
 import SignupForm from './components/SignupForm';
+import SignupPage from './containers/SignupPage';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/signup" component={SignupForm} />
+          <Route path="/signup" component={SignupPage} />
         </Switch>
       </div>
     </Router>
