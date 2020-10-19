@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import { connect } from 'react-redux'
 
 class SignupForm extends React.Component {
     
@@ -19,7 +20,7 @@ class SignupForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(event.target.firstName);
+        this.props.addUser(this.state)
     }
     
     render() {
@@ -40,4 +41,8 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+const mapDispatchToProps = dispatch => ({
+    addUser: user => dispatch({type: 'ADD_USER', payload: user})
+})
+
+export default connect(null, mapDispatchToProps)(SignupForm)
