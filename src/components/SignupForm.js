@@ -3,7 +3,12 @@ import Navbar from './Navbar';
 import { connect } from 'react-redux'
 
 class SignupForm extends React.Component {
-    
+   // alot of this logic will be pulled up onne level into the <SignupPage /> component
+   // which will pass the necessary data and functions as props.
+   
+   // that way you can just have a generic signup form, that you 
+   // pass in props. ex: in SignupPage /> you would render this component:
+   // <SignupForm handleChange={this.handlechange} handleSubmit={this.handleSubmit}/>
     state = {
         firstName: "",
         lastName: "",
