@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
     addUser: user => dispatch(addUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(SignupPage)
+export default connect(null, mapDispatchToProps)(SignupPage);
