@@ -14,7 +14,13 @@ function addUser(user) {
               'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-              user: user
+              user: {
+                  first_name: user.firstName,
+                  last_name: user.lastName,
+                  email: user.email,
+                  password: user.password,
+                  password_confirmation: user.passwordConfirmation
+              }
           })
         }) 
         .then(resp => console.log(resp))
