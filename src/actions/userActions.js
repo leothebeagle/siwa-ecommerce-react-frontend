@@ -16,6 +16,7 @@ function addUser(user) {
           headers: {
               'Content-Type': 'application/json'
           },
+        //   credentials: 'omit',
           body: JSON.stringify({
               user: {
                   first_name: firstName,
@@ -24,7 +25,7 @@ function addUser(user) {
                   password: password,
                   password_confirmation: passwordConfirmation
               }
-          })
+          }),
         }) 
         .then(resp => console.log(resp))
     }
