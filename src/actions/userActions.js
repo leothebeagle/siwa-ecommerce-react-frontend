@@ -6,6 +6,9 @@
 // }
 
 function addUser(user) {
+
+    const { firstName, lastName, email, password, passwordConfirmation } = user;
+
     return (dispatch) => {
         fetch('http://localhost:3000/users', 
         {
@@ -15,11 +18,11 @@ function addUser(user) {
           },
           body: JSON.stringify({
               user: {
-                  first_name: user.firstName,
-                  last_name: user.lastName,
-                  email: user.email,
-                  password: user.password,
-                  password_confirmation: user.passwordConfirmation
+                  first_name: firstName,
+                  last_name: lastName,
+                  email: email,
+                  password: password,
+                  password_confirmation: passwordConfirmation
               }
           })
         }) 
