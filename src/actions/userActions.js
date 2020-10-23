@@ -27,7 +27,8 @@ function addUser(user) {
               }
           }),
         }) 
-        .then(resp => console.log()
+        .then(resp => resp.json())
+        .then(data => console.log(data))
     }
 }
 
