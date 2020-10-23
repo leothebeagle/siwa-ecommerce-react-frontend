@@ -12,11 +12,11 @@ function addUser(user) {
     return (dispatch) => {
         fetch('http://localhost:3000/users', 
         {
-          method: 'POST',  
+          method: 'POST', 
+          credentials: 'include', 
           headers: {
               'Content-Type': 'application/json'
           },
-        //   credentials: 'omit', we will get to this point when we want to request cookies.
           body: JSON.stringify({
               user: {
                   first_name: firstName,
