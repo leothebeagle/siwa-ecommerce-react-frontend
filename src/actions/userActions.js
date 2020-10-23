@@ -16,7 +16,7 @@ function addUser(user) {
           headers: {
               'Content-Type': 'application/json'
           },
-        //   credentials: 'omit',
+        //   credentials: 'omit', we will get to this point when we want to request cookies.
           body: JSON.stringify({
               user: {
                   first_name: firstName,
@@ -27,7 +27,7 @@ function addUser(user) {
               }
           }),
         }) 
-        .then(resp => console.log(resp))
+        .then(resp => console.log()
     }
 }
 
