@@ -1,10 +1,9 @@
-// const addUser = (user) => {
-//     return {
-//         type: 'ADD_USER',
-//         payload: user
-//     }
-// }
-
+const addUser = (user) => {
+    return {
+        type: 'ADD_USER',
+        payload: user
+    }
+}
 
 function registerUser(userFormData) {
 
@@ -32,11 +31,11 @@ function registerUser(userFormData) {
           }),
         }) 
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(user => dispatch(addUser(user)))
     }
 }
 
-export default addUser;
+export default registerUser;
 
 
 
