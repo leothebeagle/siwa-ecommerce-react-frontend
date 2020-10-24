@@ -5,9 +5,9 @@
 //     }
 // }
 
-function addUser(user) {
+function addUser(userFormData) {
 
-    const { firstName, lastName, email, password, passwordConfirmation } = user;
+    const { firstName, lastName, email, password, passwordConfirmation } = userFormData;
 
     return (dispatch) => {
         fetch('http://localhost:3000/users', 
