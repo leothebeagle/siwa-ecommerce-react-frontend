@@ -25,7 +25,8 @@ export default function usersReducer(state={
             }
             case 'REGISTERING_USER':
                 return {
-                    ...state
+                    ...state,
+                    registering: true
                 }
                 
         default: 
