@@ -1,17 +1,13 @@
 export default function usersReducer(state={
   firstName: '',
   lastName: '',
-  email: '',
-  password: '',
-  passwordConfirmation: ''  
+  email: '',  
 }, action) {
 
     // const {
     //     firstName, 
     //     lastName, 
-    //     email,
-    //     password,
-    //     passwordConfirmation
+    //     email
     // } = action.payload;
 
     switch(action.type) {
