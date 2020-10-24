@@ -1,7 +1,10 @@
 export default function usersReducer(state={
   firstName: '',
   lastName: '',
-  email: '',  
+  email: '',
+  registering: false,
+  loggedIn: false,
+  loggingIn: false  
 }, action) {
 
     // const {
@@ -20,6 +23,11 @@ export default function usersReducer(state={
                 password: action.payload.password,
                 passwordConfirmation: action.payload.passwordConfirmation
             }
+            case 'REGISTERING_USER':
+                return {
+                    ...state
+                }
+                
         default: 
             return state;
     }
