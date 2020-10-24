@@ -20,8 +20,7 @@ export default function usersReducer(state={
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName,
                 email: action.payload.email,
-                password: action.payload.password,
-                passwordConfirmation: action.payload.passwordConfirmation
+                registering: false
             }
             case 'REGISTERING_USER':
                 return {
