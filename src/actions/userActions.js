@@ -4,6 +4,7 @@
 //         payload: user
 //     }
 // }
+// the above code is for when I was testing out actions when hooking up Redux.
 
 function addUser(userFormData) {
 
