@@ -11,6 +11,9 @@ function addUser(userFormData) {
     const { firstName, lastName, email, password, passwordConfirmation } = userFormData;
 
     return (dispatch) => {
+        
+        dispatch( { type: 'REGISTERING_USER'});
+
         fetch('http://localhost:3000/users', 
         {
           method: 'POST', 
