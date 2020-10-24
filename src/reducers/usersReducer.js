@@ -17,8 +17,8 @@ export default function usersReducer(state={
         case 'ADD_USER':
             return {
                 ...state,
-                firstName: action.payload.firstName,
-                lastName: action.payload.lastName,
+                firstName: action.payload.first_name,
+                lastName: action.payload.last_name,
                 email: action.payload.email,
                 registering: false
             }
