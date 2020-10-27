@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './containers/Home'
+import UserDashboard from './containers/UserDashboard'
 
 import {
   BrowserRouter as Router, 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupPage} />
+          <Route path="/user-dashboard" component={UserDashboard} />
         </Switch>
       </div>
     </Router>
