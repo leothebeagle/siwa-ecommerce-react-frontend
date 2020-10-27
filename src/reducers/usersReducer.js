@@ -23,11 +23,11 @@ export default function usersReducer(state={
                 registering: false,
                 loggedIn: action.payload.logged_in
             }
-            case 'REGISTERING_USER':
-                return {
-                    ...state,
-                    registering: true
-                }
+        case 'REGISTERING_USER':
+            return {
+                ...state,
+                registering: true
+            }
                 
         default: 
             return state;
