@@ -25,7 +25,7 @@ class SignupPage extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.registerUser(this.state)
-    }
+    }   
     
     render() {
         const { firstName, lastName, email, password, passwordConfirmation } = this.state
@@ -42,4 +42,8 @@ const mapDispatchToProps = dispatch => ({
     registerUser: user => dispatch(registerUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(SignupPage);
+const mapStateToProps = state => ({
+    user: state.user
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
