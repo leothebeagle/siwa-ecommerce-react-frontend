@@ -31,9 +31,11 @@ function registerUser(userFormData) {
           }),
         }) 
         .then(resp => resp.json())
-        .then(user => {
-            console.log(user)
-            dispatch(addUser(user))
+        .then(resp => {
+            console.log(resp)
+            if(resp.logged_in === true) {
+                dispatch(addUser(resp))
+            }
         })
         // .then(user => dispatch(addUser(user)))
     }
