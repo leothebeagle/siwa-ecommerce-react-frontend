@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
-import addUser from '../actions/userActions';
+import registerUser from '../actions/userActions';
 
 class SignupPage extends React.Component {
 
@@ -24,7 +24,7 @@ class SignupPage extends React.Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.addUser(this.state)
+        this.props.registerUser(this.state)
     }
     
     render() {
@@ -39,7 +39,7 @@ class SignupPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addUser: user => dispatch(addUser(user))
+    registerUser: user => dispatch(registerUser(user))
 })
 
 export default connect(null, mapDispatchToProps)(SignupPage);
