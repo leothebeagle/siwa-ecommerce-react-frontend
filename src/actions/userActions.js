@@ -8,7 +8,7 @@ const addUser = (user) => {
 function registerUser(userFormData) {
 
     const { firstName, lastName, email, password, passwordConfirmation } = userFormData;
-
+    
     return (dispatch) => {
         
         dispatch( { type: 'REGISTERING_USER'});

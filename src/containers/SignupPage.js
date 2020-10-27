@@ -1,5 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Redirect } from "react-router";
 
 import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
@@ -24,11 +25,18 @@ class SignupPage extends React.Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.registerUser(this.state)
+        this.props.registerUser(this.state);
+
     }   
     
     render() {
-        const { firstName, lastName, email, password, passwordConfirmation } = this.state
+        const { firstName, lastName, email, password, passwordConfirmation } = this.state;
+
+        if(this.props.user.redirectTo) {
+            console.log("inside the redirect")
+            return <Redirect to='/' /> 
+        };
+        
         return(
             <div>
                 <Navbar />
