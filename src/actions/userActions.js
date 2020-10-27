@@ -31,7 +31,11 @@ function registerUser(userFormData) {
           }),
         }) 
         .then(resp => resp.json())
-        .then(user => dispatch(addUser(user)))
+        .then(user => {
+            console.log(user)
+            dispatch(addUser(user))
+        })
+        // .then(user => dispatch(addUser(user)))
     }
 }
 

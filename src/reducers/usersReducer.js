@@ -17,10 +17,11 @@ export default function usersReducer(state={
         case 'ADD_USER':
             return {
                 ...state,
-                firstName: action.payload.first_name,
-                lastName: action.payload.last_name,
-                email: action.payload.email,
-                registering: false
+                firstName: action.payload.user.first_name,
+                lastName: action.payload.user.last_name,
+                email: action.payload.user.email,
+                registering: false,
+                loggedIn: action.payload.logged_in
             }
             case 'REGISTERING_USER':
                 return {
