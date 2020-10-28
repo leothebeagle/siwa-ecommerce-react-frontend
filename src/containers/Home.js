@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import { connect } from 'react-redux';
 
+import logoutUser from '../actions/userActions'
+
 class Home extends Component {
     render() {
         return(
@@ -14,7 +16,7 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    handleLogoutClick: () => console.log("I am dispatching logout now.")
+    handleLogoutClick: () => dispatch(logoutUser())
 })
 
 export default connect(null, mapDispatchToProps)(Home);
