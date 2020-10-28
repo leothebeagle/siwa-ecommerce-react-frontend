@@ -5,6 +5,12 @@ const addUser = (user) => {
     }
 }
 
+const userLogoutAction = () => {
+    return {
+        type: 'LOGOUT_USER'
+    }
+}
+
 function registerUser(userFormData) {
 
     const { firstName, lastName, email, password, passwordConfirmation } = userFormData;
@@ -41,7 +47,21 @@ function registerUser(userFormData) {
     }
 }
 
-export default registerUser;
+function logoutUser() {
+    return (dispatch) => {
+        fetch('http://localhost:3000/logout', 
+        {
+          method: 'DELETE', 
+          credentials: 'include', 
+          headers: {
+              'Content-Type': 'application/json'
+          }
+        })
+        .then(response => dispatch(userLogoutAction))
+    }
+}
+
+export default { registerUser, logoutUser };
 
 
 
