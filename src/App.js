@@ -1,6 +1,5 @@
 import React from 'react';
 import Home from './containers/Home'
-import UserDashboard from './containers/UserDashboard'
 
 import {
   BrowserRouter as Router, 
@@ -9,6 +8,9 @@ import {
 } from "react-router-dom"; 
 
 import SignupPage from './containers/SignupPage';
+import UserDashboard from './containers/UserDashboard'
+import LoginPage from './containers/LoginPage'
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupPage} />
-          <Route path="/user-dashboard" component={UserDashboard} />
+          <Route path="/login" component={LoginPage} />
         </Switch>
       </div>
     </Router>
