@@ -3,17 +3,14 @@ import { connect } from 'react-redux';
 import { Redirect } from "react-router";
 
 import Navbar from '../components/Navbar';
-import SignupForm from '../components/SignupForm';
-import {registerUser} from '../actions/userActions';
+import LoginForm from '../components/LoginForm';
+import {loginUser} from '../actions/userActions';
 
-class SignupPage extends React.Component {
+class LoginPage extends React.Component {
 
     state = {
-        firstName: "",
-        lastName: "",
         email:"",
         password: "",
-        passwordConfirmation: ""
     }
 
     
@@ -25,12 +22,11 @@ class SignupPage extends React.Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.registerUser(this.state);
-
+        this.props.loginUser(this.state);
     }   
     
     render() {
-        const { firstName, lastName, email, password, passwordConfirmation } = this.state;
+        const { email, password } = this.state;
 
         if(this.props.user.redirectTo) {
             console.log("inside the redirect")
@@ -40,18 +36,18 @@ class SignupPage extends React.Component {
         return(
             <div>
                 <Navbar />
-                <SignupForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
+                <LoginForm handleSubmit={this.handleSubmit} handleChange={this.handleChange}  email={email} password={password} />
             </div>
         )
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    registerUser: user => dispatch(registerUser(user))
+    loginUser: userCredentials => dispatch(loginUser(userCredentials))
 })
 
 const mapStateToProps = state => ({
     user: state.user
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

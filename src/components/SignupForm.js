@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SignupForm(props) {
+const SignupForm = (props) => {
 
     const {
         handleChange,
