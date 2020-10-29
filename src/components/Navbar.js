@@ -8,6 +8,7 @@ const Navbar = props => {
         <div>
             <NavLink to='/'> Home</NavLink>
             <NavLink to='/signup'> Signup</NavLink>
+            <NavLink to='/login'> Login</NavLink>
             <Logout handleLogoutClick={props.handleLogoutClick} />
         </div>
     )
