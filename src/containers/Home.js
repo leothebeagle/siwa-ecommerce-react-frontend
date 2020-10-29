@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import { connect } from 'react-redux';
 
-import logoutUser from '../actions/userActions'
+import {logoutUser} from '../actions/userActions'
 
 class Home extends Component {
     render() {

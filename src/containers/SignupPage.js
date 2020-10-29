@@ -4,7 +4,7 @@ import { Redirect } from "react-router";
 
 import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
-import registerUser from '../actions/userActions';
+import {registerUser} from '../actions/userActions';
 
 class SignupPage extends React.Component {
 
