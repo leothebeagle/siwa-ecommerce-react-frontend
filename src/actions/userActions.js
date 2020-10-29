@@ -47,6 +47,37 @@ export const registerUser = (userFormData) => {
     }
 }
 
+export const loginUser = (userCredentials) => {
+
+    const { email, password } = userCredentials;
+    
+    return (dispatch) => {
+
+        fetch('http://localhost:3000/login', 
+        {
+          method: 'POST', 
+          credentials: 'include', 
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              user: {
+                  email: email,
+                  password: password
+              }
+          }),
+        }) 
+        .then(resp => resp.json())
+        .then(resp => {
+            console.log(resp)
+            if(resp.logged_in === true) {
+                dispatch(addUser(resp))
+            }
+        })
+        // .then(user => dispatch(addUser(user)))
+    }
+}
+
 export const logoutUser = () => {
 
     return (dispatch) => {
