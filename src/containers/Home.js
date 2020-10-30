@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar';
-import { connect } from 'react-redux';
 
-import {logoutUser} from '../actions/userActions'
+
 
 class Home extends Component {
     render() {
         return(
             <div>
-                <Navbar handleLogoutClick={this.props.handleLogoutClick} />
                 <h1>Homepage</h1>
+                <img src="https://source.unsplash.com/Oh8Lp49y2Do/1000x700"></img>
             </div>
         )
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    handleLogoutClick: () => dispatch(logoutUser())
-})
 
-export default connect(null, mapDispatchToProps)(Home);
+export default Home;

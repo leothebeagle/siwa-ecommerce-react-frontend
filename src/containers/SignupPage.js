@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router";
 
-import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
 import {registerUser} from '../actions/userActions';
 
@@ -39,7 +38,6 @@ class SignupPage extends React.Component {
         
         return(
             <div>
-                <Navbar />
                 <SignupForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
             </div>
         )
