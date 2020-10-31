@@ -7,18 +7,25 @@ import {registerUser} from '../actions/userActions';
 
 const SignupPage = (props) => {
 
-    const [formState, setFormState] = useState("");
+    const [formState, setFormState] = useState({
+        firstName: "",
+        lastName:"",
+        email: "",
+        password:"",
+        passwordConfirmation:""
+    });
     
     const handleChange = event => {
-        setFormState({
+        setFormState({...formState,
             [event.target.name] : event.target.value
         })
-    }
+    };
     
     const handleSubmit = event => {
         event.preventDefault();
+        debugger
         props.registerUser(formState);
-    }   
+    };   
     
     const { firstName, lastName, email, password, passwordConfirmation } = formState;
     
