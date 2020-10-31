@@ -4,8 +4,7 @@ export default function usersReducer(state={
   email: '',
   registering: false,
   loggedIn: false,
-  loggingIn: false,
-  redirectTo: null 
+  loggingIn: false 
 }, action) {
 
     // const {
