@@ -18,7 +18,7 @@ function App(props) {
   return (
     <Router>
       <div className="App">
-        <Navbar handleLogoutClick={props.handleLogoutClick} />
+        <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupPage} />
@@ -33,4 +33,8 @@ const mapDispatchToProps = dispatch => ({
   handleLogoutClick: () => dispatch(logoutUser())
 })
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
