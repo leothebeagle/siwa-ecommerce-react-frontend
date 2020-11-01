@@ -4,8 +4,7 @@ export default function usersReducer(state={
   email: '',
   registering: false,
   loggedIn: false,
-  loggingIn: false,
-  redirectTo: null 
+  loggingIn: false 
 }, action) {
 
     // const {
@@ -22,8 +21,7 @@ export default function usersReducer(state={
                 lastName: action.payload.user.last_name,
                 email: action.payload.user.email,
                 registering: false,
-                loggedIn: action.payload.logged_in,
-                redirectTo: '/'
+                loggedIn: action.payload.logged_in
             }
         case 'REGISTERING_USER':
             return {
@@ -33,7 +31,14 @@ export default function usersReducer(state={
 
         case 'LOGOUT_USER':
             console.log("user has been logged out")
-                
+            return {
+                ...state,
+                firstName: "",
+                lastName: "",
+                email: "",
+                registering: false,
+                loggedIn: false
+            }
         default: 
             return state;
     }

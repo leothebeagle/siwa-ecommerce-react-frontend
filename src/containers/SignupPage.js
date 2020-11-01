@@ -1,51 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from "react-router";
+import { Redirect } from 'react-router';
 
-import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
 import {registerUser} from '../actions/userActions';
 
-class SignupPage extends React.Component {
+const SignupPage = (props) => {
 
-    state = {
+    const [formState, setFormState] = useState({
         firstName: "",
-        lastName: "",
-        email:"",
-        password: "",
-        passwordConfirmation: ""
-    }
-
+        lastName:"",
+        email: "",
+        password:"",
+        passwordConfirmation:""
+    });
     
-    handleChange = event => {
-        this.setState({
+    const handleChange = event => {
+        setFormState({...formState,
             [event.target.name] : event.target.value
         })
-    }
+    };
     
-    handleSubmit = event => {
+    const handleSubmit = event => {
         event.preventDefault();
-        this.props.registerUser(this.state);
-
-    }   
+        debugger
+        props.registerUser(formState);
+    };   
     
-    render() {
-        const { firstName, lastName, email, password, passwordConfirmation } = this.state;
-
-        if(this.props.user.redirectTo) {
-            console.log("inside the redirect")
-            return <Redirect to='/' /> 
-        };
-        
-        return(
-            <div>
-                <Navbar />
-                <SignupForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
-            </div>
-        )
+    const { firstName, lastName, email, password, passwordConfirmation } = formState;
+    
+    if(props.user.loggedIn) {
+        return <Redirect to="/" />
     }
-}
 
+    return(
+        <div>
+            <SignupForm handleSubmit={handleSubmit} handleChange={handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
+        </div>
+    )
+}
+    
 const mapDispatchToProps = dispatch => ({
     registerUser: user => dispatch(registerUser(user))
 })
@@ -55,3 +49,5 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
+
+

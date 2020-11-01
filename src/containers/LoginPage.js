@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router";
 
-import Navbar from '../components/Navbar';
 import LoginForm from '../components/LoginForm';
 import {loginUser} from '../actions/userActions';
 
@@ -35,7 +34,6 @@ class LoginPage extends React.Component {
         
         return(
             <div>
-                <Navbar />
                 <LoginForm handleSubmit={this.handleSubmit} handleChange={this.handleChange}  email={email} password={password} />
             </div>
         )
