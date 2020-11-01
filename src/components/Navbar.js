@@ -6,9 +6,13 @@ const Navbar = props => {
     return (
         <div>
             <NavLink to='/'> Home</NavLink>
-            <NavLink to='/signup'> Signup</NavLink>
-            <NavLink to='/login'> Login</NavLink>
-            <Logout handleLogoutClick={props.handleLogoutClick} />
+            { props.user.loggedIn ?
+                <Logout handleLogoutClick={props.handleLogoutClick} /> :
+                <>
+                    <NavLink to='/login'> Login</NavLink>
+                    <NavLink to='/signup'> Signup</NavLink>
+                </>
+            }
         </div>
     )
 }
