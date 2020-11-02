@@ -6,7 +6,8 @@ import {
   Switch
 } from "react-router-dom"; 
 
-import {logoutUser} from './actions/userActions'
+import {logoutUser} from './actions/userActions';
+import {fetchItems} from './actions/itemActions';
 import React, { useEffect } from 'react';
 import Home from './containers/Home'
 import Navbar from './components/Navbar'
@@ -17,9 +18,10 @@ import LoginPage from './containers/LoginPage';
 
 function App(props) {
   
-  // useEffect(()=> {
+  useEffect(()=> {
       // here is where you dispatch an action to make the api call to the backend.
-  // })
+      props.fetchItems()
+  }, [])
 
   return (
     <Router>
@@ -38,7 +40,8 @@ function App(props) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  handleLogoutClick: () => dispatch(logoutUser())
+  handleLogoutClick: () => dispatch(logoutUser()),
+  fetchItems: () => dispatch(fetchItems())
 })
 
 const mapStateToProps = state => ({
@@ -47,3 +50,12 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+// start building out your itemActions
+// make an itemsReducer
+// incorporate that reducer into your overall reducer
+
+// import an action from itemActions
+// mapDispatchToProps, dispatch the action you imported to add items to state.
+// pass that as props. 
