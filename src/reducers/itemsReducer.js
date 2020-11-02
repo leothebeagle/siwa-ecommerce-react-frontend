@@ -4,5 +4,8 @@ export default function itemsReducer(state ={
     switch(action.type) {
         case 'FETCHING_ITEMS':
             console.log("fetching users")
+
+        default:
+            return state
     }
 }
