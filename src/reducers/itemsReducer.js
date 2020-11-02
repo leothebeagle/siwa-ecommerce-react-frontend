@@ -1,4 +1,4 @@
-function itemsReducer(state ={
+export default function itemsReducer(state ={
     items: []
 }, action) {
     switch(action.type) {
