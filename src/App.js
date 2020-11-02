@@ -7,14 +7,20 @@ import {
 } from "react-router-dom"; 
 
 import {logoutUser} from './actions/userActions'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Home from './containers/Home'
 import Navbar from './components/Navbar'
 import SignupPage from './containers/SignupPage';
-import LoginPage from './containers/LoginPage'
+import LoginPage from './containers/LoginPage';
+// import ItemsList from './containers/ItemsList';
 
 
 function App(props) {
+  
+  // useEffect(()=> {
+      // here is where you dispatch an action to make the api call to the backend.
+  // })
+
   return (
     <Router>
       <div className="App">
@@ -24,6 +30,8 @@ function App(props) {
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
         </Switch>
+        
+        {/* <ItemsList items={this.props.items}/> */}
       </div>
     </Router>
   );
@@ -34,7 +42,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  // items: state.items
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
