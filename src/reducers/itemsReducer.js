@@ -1,5 +1,5 @@
 export default function itemsReducer(state ={
-    items: [],
+    productList: [],
     fetchingItems: false
 }, action) {
     switch(action.type) {
@@ -11,10 +11,10 @@ export default function itemsReducer(state ={
             }
 
         case 'ADD_ITEMS':
-            console.log("adding items to state")
+            console.log(action.payload)
             return {
                 ...state,
-                items: action.payload,
+                productList: action.payload.items,
                 fetchingItems: false
             }
         default:
