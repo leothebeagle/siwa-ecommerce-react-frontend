@@ -17,9 +17,8 @@ import LoginPage from './containers/LoginPage';
 
 
 function App(props) {
-  
+  //Whenever this component renders, (either on mounting or updating) make a call to the API
   useEffect(()=> {
-      // here is where you dispatch an action to make the api call to the backend.
       props.fetchItems()
   })
 
@@ -33,13 +32,13 @@ function App(props) {
           <Route path="/login" component={LoginPage} />
         </Switch>
         
-        {/* <ItemsList items={this.props.items}/> */}
+        {/* <ItemsList items={this.props.items}/> */}                       
       </div>
     </Router>
   );
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({       
   handleLogoutClick: () => dispatch(logoutUser()),
   fetchItems: () => dispatch(fetchItems())
 })
