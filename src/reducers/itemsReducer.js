@@ -11,6 +11,7 @@ export default function itemsReducer(state ={
             }
 
         case 'ADD_ITEMS':
+            console.log("adding items to state")
             return {
                 ...state,
                 items: action.payload
