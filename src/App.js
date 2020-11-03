@@ -21,7 +21,7 @@ function App(props) {
   useEffect(()=> {
       // here is where you dispatch an action to make the api call to the backend.
       props.fetchItems()
-  }, [])
+  })
 
   return (
     <Router>
