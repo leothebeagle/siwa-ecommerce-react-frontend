@@ -13,7 +13,7 @@ import Home from './containers/Home'
 import Navbar from './components/Navbar'
 import SignupPage from './containers/SignupPage';
 import LoginPage from './containers/LoginPage';
-// import ItemsList from './containers/ItemsList';
+import ItemsList from './containers/ItemsList';
 
 
 function App(props) {
@@ -30,6 +30,7 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/items" component={ItemsList} />
         </Switch>
         
         {/* <ItemsList items={this.props.items}/> */}                       
