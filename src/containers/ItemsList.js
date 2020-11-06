@@ -11,6 +11,7 @@ const ItemsList = (props) => {
     }
 
     const items = props.items.map(item => <Item item={item} addToCart={() => handleAddToCart(item)}/>)
+    
     return(
         <div>
             {items}
