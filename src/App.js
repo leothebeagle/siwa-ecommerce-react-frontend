@@ -6,15 +6,22 @@ import {
   Switch
 } from "react-router-dom"; 
 
-import {logoutUser} from './actions/userActions'
-import React from 'react';
+import {logoutUser} from './actions/userActions';
+import {fetchItems} from './actions/itemActions';
+import React, { useEffect } from 'react';
 import Home from './containers/Home'
 import Navbar from './components/Navbar'
 import SignupPage from './containers/SignupPage';
-import LoginPage from './containers/LoginPage'
+import LoginPage from './containers/LoginPage';
+import ItemsList from './containers/ItemsList';
 
 
 function App(props) {
+  //Whenever this component renders, (either on mounting or updating) make a call to the API
+  useEffect(()=> {
+      props.fetchItems()
+  })
+
   return (
     <Router>
       <div className="App">
@@ -23,18 +30,32 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/items" component={ItemsList} />
         </Switch>
+        
+        {/* <ItemsList items={this.props.items}/> */}                       
       </div>
     </Router>
   );
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleLogoutClick: () => dispatch(logoutUser())
+const mapDispatchToProps = dispatch => ({       
+  handleLogoutClick: () => dispatch(logoutUser()),
+  fetchItems: () => dispatch(fetchItems())
 })
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  // items: state.items
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+// start building out your itemActions
+// make an itemsReducer
+// incorporate that reducer into your overall reducer
+
+// import an action from itemActions
+// mapDispatchToProps, dispatch the action you imported to add items to state.
+// pass that as props. 
