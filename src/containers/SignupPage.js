@@ -23,7 +23,6 @@ const SignupPage = (props) => {
     
     const handleSubmit = event => {
         event.preventDefault();
-        debugger
         props.registerUser(formState);
     };   
     
