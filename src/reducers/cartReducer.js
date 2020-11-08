@@ -9,6 +9,16 @@ export default function cartReducer(state = {
                 ...state,
                 cart_id: action.payload.id
             }
+
+
+        case 'UPDATE_CART':
+            console.log('updating cart')
+            return {
+                ...state,
+                cart_id: action.payload.cart.id,
+                cart_items: action.payload.cart.items
+            }
+
         case 'ADDING_TO_CART':
             console.log('Adding items to cart')
             return {
