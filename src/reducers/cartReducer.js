@@ -6,6 +6,10 @@ export default function cartReducer(state = {
     switch(action.type) {
         case 'ADDING_TO_CART':
             console.log('Adding items to cart')
+            return {
+                ...state,
+                addingItemToCart: true
+            }
         default:
             return state
     }
