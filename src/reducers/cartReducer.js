@@ -1,13 +1,13 @@
 export default function cartReducer(state = {
-    cart_id: null,
-    cart_items: [],
+    cartId: null,
+    cartItems: [],
     addingItemToCart: false
 }, action) {
     switch(action.type) {
         case 'ADD_NEW_CART':
             return {
                 ...state,
-                cart_id: action.payload.id
+                cartId: action.payload.id
             }
 
 
@@ -15,8 +15,8 @@ export default function cartReducer(state = {
             console.log('updating cart')
             return {
                 ...state,
-                cart_id: action.payload.cart.id,
-                cart_items: action.payload.cart.items
+                cartId: action.payload.cart.id,
+                cartItems: action.payload.cart.items
             }
 
         case 'ADDING_TO_CART':
