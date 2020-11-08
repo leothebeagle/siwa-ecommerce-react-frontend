@@ -6,6 +6,14 @@ export const addNewCart = (cart) => {
     }
 }
 
+
+export const updateCart = (cart) => {
+    return {
+        type: 'UPDATE_CART',
+        payload: cart
+    }
+}
+
 export const addToCart = (dispatch) => {
     return (dispatch) => {
         dispatch({type:'ADDING_TO_CART'})
