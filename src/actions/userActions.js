@@ -1,4 +1,4 @@
-import {addNewCart} from './cartActions'
+import {addNewCart, updateCart} from './cartActions'
 
 const addUser = (user) => {
     return {
@@ -75,7 +75,8 @@ export const loginUser = (userCredentials) => {
         .then(resp => {
             console.log(resp)
             if(resp.logged_in === true) {
-                dispatch(addUser(resp))
+                dispatch(addUser(resp));
+                dispatch(updateCart(resp));
             }
         })
         // .then(user => dispatch(addUser(user)))
