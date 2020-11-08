@@ -14,10 +14,24 @@ export const updateCart = (cart) => {
     }
 }
 
-export const addToCart = (dispatch) => {
+export const addItemToCart = (item, cartId) => {
+    
     return (dispatch) => {
         dispatch({type:'ADDING_TO_CART'})
-        //fetch request
-        // fetch response and dispatch of actions.
+        fetch('http://localhost:3000/carts', 
+        {
+          method: 'POST', 
+          credentials: 'include', 
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+           item: item,
+           cart_id: cartId
+          }),
+        })
+        .then(resp => resp.json())
+        .then(res => dispatch(updateCart(res)))
+       
     }
 }
