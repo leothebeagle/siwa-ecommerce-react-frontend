@@ -1,3 +1,5 @@
+import {addNewCart} from './cartActions'
+
 const addUser = (user) => {
     return {
         type: 'ADD_USER',
@@ -41,9 +43,11 @@ export const registerUser = (userFormData) => {
             console.log(resp)
             if(resp.logged_in === true) {
                 dispatch(addUser(resp))
+                dispatch(addNewCart(resp.cart))
+                // we may want to dispatch an action to the carts reducer to add a new cart
+                // you want the cart id. (logging in will be different)
             }
         })
-        // .then(user => dispatch(addUser(user)))
     }
 }
 
