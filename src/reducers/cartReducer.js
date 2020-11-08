@@ -1,5 +1,6 @@
 export default function cartReducer(state = {
-    cart: [],
+    cart_id: null,
+    cart_items: [],
     addingItemToCart: false
 }, action) {
     switch(action.type) {
