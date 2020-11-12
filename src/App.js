@@ -14,7 +14,7 @@ import Navbar from './components/Navbar'
 import SignupPage from './containers/SignupPage';
 import LoginPage from './containers/LoginPage';
 import ItemsList from './containers/ItemsList';
-import Cart from './components/Cart';
+import CartPage from './containers/CartPage';
 
 
 function App(props) {
@@ -32,7 +32,7 @@ function App(props) {
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/items" component={ItemsList} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/cart" component={CartPage} />
 
         </Switch>
         
