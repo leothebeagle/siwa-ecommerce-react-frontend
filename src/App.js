@@ -31,6 +31,8 @@ function App(props) {
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/items" component={ItemsList} />
+          <Route path="/cart" component={Cart} />
+
         </Switch>
         
         {/* <ItemsList items={this.props.items}/> */}                       
