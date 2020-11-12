@@ -1,8 +1,18 @@
 
+
 export const placeOrder = () => {
-    console.log("trying to place an order from action")
-    return {
-        type: 'PLACE_ORDER'
+    
+    return (dispatch) => {
+       dispatch({type: 'PLACING_ORDER'})
+       fetch('http://localhost:3000/orders', {
+            method: 'POST', 
+            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+       })
+       .then(resp => resp.json())
+       .then(res => console.log(res))
     }
 }
 
@@ -12,7 +22,6 @@ export const addNewCart = (cart) => {
         payload: cart
     }
 }
-
 
 export const updateCart = (cart) => {
     return {
