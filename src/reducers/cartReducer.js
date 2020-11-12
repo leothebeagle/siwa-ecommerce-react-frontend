@@ -10,7 +10,6 @@ export default function cartReducer(state = {
                 cartId: action.payload.id
             }
 
-
         case 'UPDATE_CART':
             console.log('updating cart')
             return {
@@ -25,6 +24,10 @@ export default function cartReducer(state = {
                 ...state,
                 addingItemToCart: true
             }
+        
+        case 'PLACE_ORDER':
+            console.log('placing order')
+            
         default:
             return state
     }
