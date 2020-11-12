@@ -14,6 +14,7 @@ import Navbar from './components/Navbar'
 import SignupPage from './containers/SignupPage';
 import LoginPage from './containers/LoginPage';
 import ItemsList from './containers/ItemsList';
+import Cart from './components/Cart';
 
 
 function App(props) {
