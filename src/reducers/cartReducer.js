@@ -1,7 +1,8 @@
 export default function cartReducer(state = {
     cartId: null,
     cartItems: [],
-    addingItemToCart: false
+    addingItemToCart: false,
+    placingOrder: false
 }, action) {
     switch(action.type) {
         case 'ADD_NEW_CART':
@@ -24,9 +25,9 @@ export default function cartReducer(state = {
                 ...state,
                 addingItemToCart: true
             }
-        
-        case 'PLACE_ORDER':
-            console.log('placing order')
+            
+        case 'PLACING_ORDER':
+            console.log("placing order")
             
         default:
             return state
