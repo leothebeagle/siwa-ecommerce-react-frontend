@@ -1,5 +1,4 @@
 
-
 export const placeOrder = () => {
     
     return (dispatch) => {
@@ -12,7 +11,7 @@ export const placeOrder = () => {
             }
        })
        .then(resp => resp.json())
-       .then(res => console.log(res))
+       .then(res => dispatch( updateCart(res) ))
     }
 }
 
