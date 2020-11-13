@@ -8,6 +8,7 @@ const Cart = (props) => {
     return(
         <div>
             <h4>Shopping Cart</h4>
+            <h3>Cart total: ${props.total}</h3>
 
             {cartItems}
 

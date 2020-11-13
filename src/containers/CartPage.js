@@ -11,7 +11,7 @@ const CartPage = (props) => {
 
     return(
         <div>
-            <Cart cartItems={props.cartItems} submitOrder={handleSubmitOrder}/>
+            <Cart cartItems={props.cartItems} total={props.total} submitOrder={handleSubmitOrder}/>
         </div>
     )
 };
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-     cartItems: state.cart.cartItems
+     cartItems: state.cart.cartItems,
+     total: state.cart.total
 });
 
 
