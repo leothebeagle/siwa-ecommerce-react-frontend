@@ -1,6 +1,7 @@
 export default function cartReducer(state = {
     cartId: null,
     cartItems: [],
+    total: 0,
     addingItemToCart: false,
     placingOrder: false
 }, action) {
@@ -16,7 +17,8 @@ export default function cartReducer(state = {
             return {
                 ...state,
                 cartId: action.payload.cart.id,
-                cartItems: action.payload.cart.items
+                cartItems: action.payload.cart.items,
+                total: action.payload.cart.total
             }
 
         case 'ADDING_TO_CART':
