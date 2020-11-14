@@ -27,11 +27,10 @@ class LoginPage extends React.Component {
     render() {
         const { email, password } = this.state;
 
-        if(this.props.user.redirectTo) {
-            console.log("inside the redirect")
-            return <Redirect to='/' /> 
-        };
-        
+        if(this.props.user.loggedIn) {
+            return <Redirect to="/" />
+        }
+                
         return(
             <div>
                 <LoginForm handleSubmit={this.handleSubmit} handleChange={this.handleChange}  email={email} password={password} />

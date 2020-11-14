@@ -7,7 +7,7 @@ const Item = props => {
             <img src={props.item.image}></img>
             <p>{props.item.description}</p>
             <p>{props.item.price}</p>
-            <button onClick={props.addToCart}>Add to cart</button>
+            <button onClick={props.addItemToCart}>Add to cart</button>
         </div>
     )
 }

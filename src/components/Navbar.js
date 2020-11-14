@@ -15,6 +15,7 @@ const Navbar = props => {
                     <NavLink to='/signup'> Signup</NavLink>
                 </>
             }
+            <NavLink to='/cart'>Cart</NavLink>
         </div>
     )
 }

@@ -1,10 +1,10 @@
-export default function itemsReducer(state ={
+export default function itemsReducer(state = {
     itemList: [],
     fetchingItems: false
 }, action) {
     switch(action.type) {
         case 'FETCHING_ITEMS':
-            console.log("fetching users")
+            console.log("fetching items")
             return {
                 ...state,
                 fetchingItems: true
