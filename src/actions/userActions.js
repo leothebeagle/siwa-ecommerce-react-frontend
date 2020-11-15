@@ -1,9 +1,10 @@
-import {addNewCart, updateCart} from './cartActions'
+import { updateCart } from './cartActions'
 
 const addUser = (user) => {
     return {
         type: 'ADD_USER',
         payload: user
+        // ditch the payload and argument
     }
 }
 
@@ -43,7 +44,7 @@ export const registerUser = (userFormData) => {
             console.log(resp)
             if(resp.logged_in === true) {
                 dispatch(addUser(resp))
-                dispatch(addNewCart(resp.cart))
+                dispatch(updateCart(resp.cart))
                 // we may want to dispatch an action to the carts reducer to add a new cart
                 // you want the cart id. (logging in will be different)
             }
@@ -73,10 +74,12 @@ export const loginUser = (userCredentials) => {
         }) 
         .then(resp => resp.json())
         .then(resp => {
-            console.log(resp)
             if(resp.logged_in === true) {
+                // store data in localStorage
                 dispatch(addUser(resp));
                 dispatch(updateCart(resp));
+                // ditch argument in response. will be updating the localStorage with data, 
+                // and state will be pulling it from there.
             }
         })
         // .then(user => dispatch(addUser(user)))

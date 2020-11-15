@@ -15,13 +15,6 @@ export const placeOrder = () => {
     }
 }
 
-export const addNewCart = (cart) => {
-    return {
-        type: 'ADD_NEW_CART',
-        payload: cart
-    }
-}
-
 export const updateCart = (cart) => {
     return {
         type: 'UPDATE_CART',
