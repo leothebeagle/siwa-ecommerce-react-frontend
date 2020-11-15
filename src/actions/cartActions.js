@@ -45,7 +45,10 @@ export const addItemToCart = (item, cartId) => {
           }),
         })
         .then(resp => resp.json())
-        .then(res => dispatch(updateCart(res)))
+        .then(res => {
+            localStorage.setItem("cart", JSON.stringify(res))
+            dispatch(updateCart(res))
+        })
     }
 }
 
