@@ -5,7 +5,8 @@ export default function cartReducer(state = {
     addingItemToCart: false,
     placingOrder: false
 }, action) {
-    const localStoredCart = JSON.parse(localStorage.getItem("cart")).cart
+
+    const localStoredCart = JSON.parse(localStorage.getItem("cart"))
     
     switch(action.type) {
 
