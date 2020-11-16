@@ -12,7 +12,7 @@ export const placeOrder = () => {
        })
        .then(resp => resp.json())
        .then(res => {
-            localStorage.setItem("cart", JSON.stringify(res))
+            localStorage.setItem("cart", JSON.stringify(res.cart))
             dispatch(updateCart(res))
         })
     }
