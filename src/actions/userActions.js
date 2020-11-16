@@ -45,6 +45,7 @@ export const registerUser = (userFormData) => {
             if(resp.logged_in === true) {
                 localStorage.setItem("user", JSON.stringify(resp.user))
                 localStorage.setItem("cart", JSON.stringify(resp.cart))
+                localStorage.setItem("loggedIn", JSON.stringify(resp.logged_in))
                 dispatch(addUser(resp))
                 dispatch(updateCart(resp.cart))
                 // we may want to dispatch an action to the carts reducer to add a new cart
