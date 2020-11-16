@@ -111,7 +111,13 @@ export const logoutUser = () => {
             }
         })
 
-        .then(resp => dispatch(userLogoutAction()));
+        .then(resp => resp.json())
+        .then(res => {
+            localStorage.setItem("user", JSON.stringify({id: "", first_name: "", last_name: "", email: ""}))
+            localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: ""}))
+            localStorage.setItem("loggedIn", "false")
+            dispatch(userLogoutAction())
+        })
     }
 }
 
