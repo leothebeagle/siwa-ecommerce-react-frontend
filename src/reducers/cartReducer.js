@@ -6,7 +6,20 @@ export default function cartReducer(state = {
     placingOrder: false
 }, action) {
 
-    const localStoredCart = JSON.parse(localStorage.getItem("cart"))
+    const localStoredCart =  localStorage.getItem("cart") ? 
+        JSON.parse(localStorage.getItem("cart")) :
+        localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: ""}))
+        JSON.parse(localStorage.getItem("cart"))
+ 
+    // const checkLocalStoredCart = () => {
+    //     if (localStorage.getItem("cart")) {
+    //         return JSON.parse(localStorage.getItem("cart"))
+    //     } else {
+    //         localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: ""}))
+    //     }
+    // }
+
+    // const localStoredCart = checkLocalStoredCart()
     
     switch(action.type) {
 
