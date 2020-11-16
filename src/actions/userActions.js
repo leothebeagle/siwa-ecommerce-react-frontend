@@ -78,6 +78,8 @@ export const loginUser = (userCredentials) => {
         .then(resp => {
             if(resp.logged_in === true) {
                 // store data in localStorage
+                localStorage.setItem("user", JSON.stringify(resp.user))
+                localStorage.setItem("cart", JSON.stringify(resp.cart))
                 dispatch(addUser(resp));
                 dispatch(updateCart(resp));
                 // ditch argument in response. will be updating the localStorage with data, 
