@@ -77,9 +77,17 @@ export const loginUser = (userCredentials) => {
         .then(resp => resp.json())
         .then(resp => {
             if(resp.logged_in === true) {
+                // {logged_in: true, user: {…}, cart: {…}}
+                //     cart: {id: 39, items: Array(6), total: 492}
+                //     logged_in: true
+                //     user: {id: 2, first_name: "Lorenzo", last_name: "Medici", email: "lorenzo@medici.com", password_digest: "$2a$12$bjTOrU/JL2ZA0wDpvM71deIexdzSJoATMF.f6jzviuIt9FVjbXU3a", …}
+                //     __proto__: Object
                 // store data in localStorage
+                console.log(resp)
                 localStorage.setItem("user", JSON.stringify(resp.user))
                 localStorage.setItem("cart", JSON.stringify(resp.cart))
+                localStorage.setItem("loggedIn", JSON.stringify(resp.logged_in))
+
                 dispatch(addUser(resp));
                 dispatch(updateCart(resp));
                 // ditch argument in response. will be updating the localStorage with data, 
