@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Cart from '../components/Cart';
-import { placeOrder } from '../actions/cartActions';
+import { placeOrder, removeFromCart } from '../actions/cartActions';
 
 const CartPage = (props) => { 
     
