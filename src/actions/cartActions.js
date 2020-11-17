@@ -11,14 +11,10 @@ export const placeOrder = () => {
             }
        })
        .then(resp => resp.json())
-       .then(res => dispatch( updateCart(res) ))
-    }
-}
-
-export const addNewCart = (cart) => {
-    return {
-        type: 'ADD_NEW_CART',
-        payload: cart
+       .then(res => {
+            localStorage.setItem("cart", JSON.stringify(res.cart))
+            dispatch(updateCart(res))
+        })
     }
 }
 
@@ -45,7 +41,11 @@ export const addItemToCart = (item, cartId) => {
           }),
         })
         .then(resp => resp.json())
-        .then(res => dispatch(updateCart(res)))
+        .then(res => {
+            console.log(res)
+            localStorage.setItem("cart", JSON.stringify(res.cart))
+            dispatch(updateCart(res))
+        })
     }
 }
 

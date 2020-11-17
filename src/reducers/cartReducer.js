@@ -5,20 +5,28 @@ export default function cartReducer(state = {
     addingItemToCart: false,
     placingOrder: false
 }, action) {
+
+    // the below line is what causes app local storage to have an empty cart on page reload, even
+    // if there was none there, as i caused by invoking localStorage.clear().
+    // it looks in localstorage, and if it doesnt find a cart it sets one. 
+
+    const localStoredCart =  localStorage.getItem("cart") ? 
+        JSON.parse(localStorage.getItem("cart")) :
+        localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: 0}))
+        JSON.parse(localStorage.getItem("cart"))
+    
     switch(action.type) {
-        case 'ADD_NEW_CART':
-            return {
-                ...state,
-                cartId: action.payload.id
-            }
 
         case 'UPDATE_CART':
             console.log('updating cart')
             return {
                 ...state,
-                cartId: action.payload.cart.id,
-                cartItems: action.payload.cart.items,
-                total: action.payload.cart.total
+                cartId: localStoredCart.id,
+                cartItems: localStoredCart.items,
+                total: localStoredCart.total
+                // cartId: action.payload.cart.id,
+                // cartItems: action.payload.cart.items,
+                // total: action.payload.cart.total
             }
 
         case 'ADDING_TO_CART':
