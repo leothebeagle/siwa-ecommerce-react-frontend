@@ -8,22 +8,21 @@ import {
 
 import {logoutUser} from './actions/userActions';
 import {fetchItems} from './actions/itemActions';
-import React, { useEffect } from 'react';
-import Home from './containers/Home'
-import Navbar from './components/Navbar'
+// import React, { useEffect } from 'react';
+import React from 'react';
+import Home from './containers/Home';
+import Navbar from './components/Navbar';
 import SignupPage from './containers/SignupPage';
 import LoginPage from './containers/LoginPage';
 import ItemsList from './containers/ItemsList';
 import CartPage from './containers/CartPage';
 
 
-function App(props) {
+class App extends React.component {
   //Whenever this component renders, (either on mounting or updating) make a call to the API
-  useEffect(()=> {
-      props.fetchItems()
-  })
-
-  return (
+  
+  render() {
+    return (
     <Router>
       <div className="App">
         <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
@@ -39,8 +38,10 @@ function App(props) {
         {/* <ItemsList items={this.props.items}/> */}                       
       </div>
     </Router>
-  );
+    );
+  }
 }
+
 
 const mapDispatchToProps = dispatch => ({       
   handleLogoutClick: () => dispatch(logoutUser()),
