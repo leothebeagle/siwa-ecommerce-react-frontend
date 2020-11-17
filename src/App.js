@@ -70,12 +70,13 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => ({       
   handleLogoutClick: () => dispatch(logoutUser()),
-  fetchItems: () => dispatch(fetchItems())
+  fetchItems: () => dispatch(fetchItems()),
+  updateCart: () => dispatch(updateCart()),
+  addUser: () => dispatch(addUser())
 })
 
 const mapStateToProps = state => ({
-  user: state.user,
-  // items: state.items
+  user: state.user
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
