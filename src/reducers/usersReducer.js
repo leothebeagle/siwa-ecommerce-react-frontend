@@ -38,16 +38,16 @@ export default function usersReducer(state={
                 registering: true
             }
 
-        case 'LOGOUT_USER':
-            console.log("user has been logged out")
-            return {
-                ...state,
-                firstName: "",
-                lastName: "",
-                email: "",
-                registering: false,
-                loggedIn: false
-            }
+        // case 'LOGOUT_USER':
+        //     console.log("user has been logged out")
+        //     return {
+        //         ...state,
+        //         firstName: "",
+        //         lastName: "",
+        //         email: "",
+        //         registering: false,
+        //         loggedIn: false
+        //     }
         default: 
             return state;
     }
