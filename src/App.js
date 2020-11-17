@@ -8,6 +8,8 @@ import {
 
 import {logoutUser} from './actions/userActions';
 import {fetchItems} from './actions/itemActions';
+import {updateCart} from './actions/cartActions';
+import {addUser} from './actions/userActions';
 // import React, { useEffect } from 'react';
 import React, { Component } from 'react';
 import Home from './containers/Home'
@@ -46,7 +48,9 @@ import CartPage from './containers/CartPage';
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchItems()
+    this.props.fetchItems();
+    this.props.updateCart();
+    this.props.addUser();
   }
 
   render() {
