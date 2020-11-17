@@ -21,7 +21,8 @@ const CartPage = (props) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    submitOrder: () => dispatch(placeOrder())
+    submitOrder: () => dispatch(placeOrder()),
+    deleteItem: (item) => dispatch(removeFromCart(item));
     // include a dispatch to delete an item
 });
 
