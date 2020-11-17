@@ -1,7 +1,9 @@
 // write an action called removeFromCart(item)
 // thunk / FETCH to delete item from cart then update the cart accordingly. 
 export const removeFromCart = (item) => {
-    consolelog("I WILL BE REMOVEING THIS ITEM FROM THE CART")
+    return (dispatch) => {
+        console.log("I will be removing item")
+    }
 }
 
 export const placeOrder = () => {
