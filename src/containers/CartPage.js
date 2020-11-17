@@ -9,11 +9,15 @@ const CartPage = (props) => {
         props.submitOrder()
     }
 
+    const handleDeleteItem = (item) => {
+        props.deleteItem(item)
+    }
+
     // you should define a fn here called handleDeleteItem(item) that calls props.deleteItem(item)
 
     return(
         <div>
-            <Cart cartItems={props.cartItems} total={props.total} submitOrder={handleSubmitOrder}/>
+            <Cart cartItems={props.cartItems} total={props.total} submitOrder={handleSubmitOrder} handleButtonClick={(item) => handleDeleteItem(item)}/>
             {/* you should pass in a fn that will be passed on by Cart into item that handles deleting an item */}
             {/* handleButtonClick={handleDeleteItem(item)} */}
         </div>
@@ -22,7 +26,7 @@ const CartPage = (props) => {
 
 const mapDispatchToProps = dispatch => ({
     submitOrder: () => dispatch(placeOrder()),
-    deleteItem: (item) => dispatch(removeFromCart(item));
+    deleteItem: (item) => dispatch(removeFromCart(item))
     // include a dispatch to delete an item
 });
 
