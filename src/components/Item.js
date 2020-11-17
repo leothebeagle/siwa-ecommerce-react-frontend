@@ -8,6 +8,9 @@ const Item = props => {
             <p>{props.item.description}</p>
             <p>{props.item.price}</p>
             <button onClick={props.addItemToCart}>Add to cart</button>
+            {/* // dynamically populate the button text */}
+             {/* change onClick fn name in props to be generic */}
+             {/* onClick={props.handleButtonClick} */}
         </div>
     )
 }

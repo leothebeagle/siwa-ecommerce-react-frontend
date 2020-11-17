@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Item from '../components/Item';
 import {addItemToCart} from '../actions/cartActions'
+// import {deleteCartItem} from '../actions/cartActions
 
 const ItemsList = (props) => {
 

@@ -1,3 +1,6 @@
+// write an action called deleteCartItem(item)
+// thunk / FETCH to delete item from cart then update the cart accordingly. 
+
 
 export const placeOrder = () => {
     
