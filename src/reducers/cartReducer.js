@@ -14,16 +14,6 @@ export default function cartReducer(state = {
         JSON.parse(localStorage.getItem("cart")) :
         localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: 0}))
         JSON.parse(localStorage.getItem("cart"))
- 
-    // const checkLocalStoredCart = () => {
-    //     if (localStorage.getItem("cart")) {
-    //         return JSON.parse(localStorage.getItem("cart"))
-    //     } else {
-    //         localStorage.setItem("cart", JSON.stringify({id: "", items: [], total: ""}))
-    //     }
-    // }
-
-    // const localStoredCart = checkLocalStoredCart()
     
     switch(action.type) {
 
