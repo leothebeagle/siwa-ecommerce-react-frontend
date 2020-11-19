@@ -4,12 +4,15 @@ import Cart from '../components/Cart';
 import { placeOrder, removeFromCart } from '../actions/cartActions';
 
 const CartPage = (props) => { 
-    
+    // the CartPage calls cart, and passes it a list of items in the cart, a function to handle submitting
+    // the cart and a function to each Item to handle deleting the item. 
     const handleSubmitOrder = () => {
+        // get passed to Cart
         props.submitOrder()
     }
 
     const handleDeleteItem = (item) => {
+        // get passed to Cart which then passes it on to each Item
         props.deleteItem(item)
     }
 
