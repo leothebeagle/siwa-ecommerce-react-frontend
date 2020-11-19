@@ -13,7 +13,7 @@ const CartPage = (props) => {
 
     const handleDeleteItem = (item) => {
         // get passed to Cart which then passes it on to each Item
-        props.removeFromCart(item)
+        props.removeFromCart(item, props.cartId)
     }
 
     // you should define a fn here called handleDeleteItem(item) that calls props.deleteItem(item)
@@ -29,14 +29,14 @@ const CartPage = (props) => {
 
 const mapDispatchToProps = dispatch => ({
     submitOrder: () => dispatch(placeOrder()),
-    removeFromCart: (item) => dispatch(removeFromCart(item))
+    removeFromCart: (item, cartId) => dispatch(removeFromCart(item, cartId))
     // include a dispatch to delete an item
 });
 
 
 const mapStateToProps = state => ({
      cartItems: state.cart.cartItems,
-     cartId: state.cart.id,
+     cartId: state.cart.cartId,
      total: state.cart.total
 });
 
