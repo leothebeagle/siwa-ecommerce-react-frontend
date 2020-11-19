@@ -3,7 +3,7 @@
 export const removeFromCart = (item, cartId) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/carts/${cartId}`, {
-            method: 'POST', 
+            method: 'DELETE', 
             credentials: 'include', 
             headers: {
                 'Content-Type': 'application/json'
