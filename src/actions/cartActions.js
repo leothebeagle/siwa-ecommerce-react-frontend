@@ -2,8 +2,18 @@
 // thunk / FETCH to delete item from cart then update the cart accordingly. 
 export const removeFromCart = (item, cartId) => {
     return (dispatch) => {
-        console.log(item);
-        console.log(cartId)
+        fetch(`http://localhost:3000/carts/${cartId}`, {
+            method: 'POST', 
+            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                item: {
+                    itemId: item.id
+                }
+            })
+       })
     }
 }
 
