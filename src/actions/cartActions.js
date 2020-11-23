@@ -1,6 +1,26 @@
-// write an action called deleteCartItem(item)
+// write an action called removeFromCart(item)
 // thunk / FETCH to delete item from cart then update the cart accordingly. 
-
+export const removeFromCart = (item, cartId) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/carts/${cartId}`, {
+            method: 'DELETE', 
+            credentials: 'include', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                item: {
+                    itemId: item.id
+                }
+            })
+       })
+       .then(resp => resp.json())
+       .then(resp => {
+        localStorage.setItem("cart", JSON.stringify(resp.cart))
+        dispatch(updateCart(resp))
+        })
+    }
+}
 
 export const placeOrder = () => {
     
