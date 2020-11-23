@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return(
       <Router>
-       <div className="App">
+       <div className="App flex-container">
          <Navbar handleLogoutClick={this.props.handleLogoutClick} user={this.props.user} />
          <Switch>
            <Route exact path="/" component={Home} />
