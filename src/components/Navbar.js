@@ -1,24 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logout from './Logout'
+import Logout from './Logout';
 
 const Navbar = props => {  
     return (
-        <div>
-            <nav>
-                <NavLink to='/'>Home</NavLink>
-                <NavLink to='/items'>Shop</NavLink>
+        <header>
+            <h3>SIWA</h3>
+            <nav className="navbar">
+                <ul>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='/items'>Shop</NavLink></li>
 
-                { props.user.loggedIn ?
-                    <Logout handleLogoutClick={props.handleLogoutClick} /> :
-                    <>
-                        <NavLink to='/login'> Login</NavLink>
-                        <NavLink to='/signup'> Signup</NavLink>
-                    </>
-                }
-                <NavLink to='/cart'>Cart</NavLink>
+                    { props.user.loggedIn ?
+                        <li><Logout handleLogoutClick={props.handleLogoutClick} /> </li> :
+                        <>
+                            <li> <NavLink to='/login'> Login</NavLink> </li>
+                            <li> <NavLink to='/signup'> Signup</NavLink> </li>
+                        </>
+                    }
+                    <li> <NavLink to='/cart'>Cart</NavLink> </li>
+                </ul>
             </nav>
-        </div>
+        </header>
     )
 }
 
