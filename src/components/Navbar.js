@@ -5,7 +5,7 @@ import Logout from './Logout';
 const Navbar = props => {  
     return (
         <header>
-            <img src="https://source.unsplash.com/WLUHO9A_xik/30x30" />
+            <img src={"./assets/tree.svg"} className="logo"></img>
             <nav>
                 <ul className="nav-links">
                     <li><NavLink to='/'>Home</NavLink></li>
