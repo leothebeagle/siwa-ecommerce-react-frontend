@@ -14,8 +14,8 @@ const Navbar = props => {
                     { props.user.loggedIn ?
                         <li><Logout handleLogoutClick={props.handleLogoutClick} /> </li> :
                         <>
-                            <li> <NavLink to='/login'> Login</NavLink> </li>
-                            <li> <NavLink to='/signup'> Signup</NavLink> </li>
+                            <li> <NavLink to='/login'> <button>Login</button></NavLink> </li>
+                            <li> <NavLink to='/signup'> <button>Signup</button></NavLink> </li>
                         </>
                     }
                     
