@@ -10,6 +10,7 @@ const Navbar = props => {
                 <ul className="nav-links">
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/items'>Shop</NavLink></li>
+                    <li> <NavLink to='/cart'>Cart</NavLink> </li>
 
                     { props.user.loggedIn ?
                         <li><Logout handleLogoutClick={props.handleLogoutClick} /> </li> :
@@ -18,7 +19,7 @@ const Navbar = props => {
                             <li> <NavLink to='/signup'> Signup</NavLink> </li>
                         </>
                     }
-                    <li> <NavLink to='/cart'>Cart</NavLink> </li>
+                    
                 </ul>
             </nav>
         </header>
