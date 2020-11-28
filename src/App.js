@@ -6,14 +6,14 @@ import {
   Switch
 } from "react-router-dom"; 
 
-import {logoutUser} from './actions/userActions';
+// import {logoutUser} from './actions/userActions';
 import {fetchItems} from './actions/itemActions';
 import {updateCart} from './actions/cartActions';
 import {addUser} from './actions/userActions';
 // import React, { useEffect } from 'react';
 import React, { Component } from 'react';
-import Home from './containers/Home'
-import Navbar from './components/Navbar'
+import Home from './containers/Home';
+// import Navbar from './components/Navbar';
 import SignupPage from './containers/SignupPage';
 import LoginPage from './containers/LoginPage';
 import ItemsList from './containers/ItemsList';
@@ -57,7 +57,7 @@ class App extends Component {
     return(
       <Router>
        <div className="App">
-         <Navbar handleLogoutClick={this.props.handleLogoutClick} user={this.props.user} />
+         {/* <Navbar handleLogoutClick={this.props.handleLogoutClick} user={this.props.user} /> */}
          <Switch>
            <Route exact path="/" component={Home} />
            <Route path="/signup" component={SignupPage} />
@@ -73,14 +73,14 @@ class App extends Component {
 
 
 const mapDispatchToProps = dispatch => ({       
-  handleLogoutClick: () => dispatch(logoutUser()),
+  // handleLogoutClick: () => dispatch(logoutUser()),
   fetchItems: () => dispatch(fetchItems()),
   updateCart: () => dispatch(updateCart()),
   addUser: () => dispatch(addUser())
 })
 
-const mapStateToProps = state => ({
-  user: state.user
-})
+// const mapStateToProps = state => ({
+//   user: state.user
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
