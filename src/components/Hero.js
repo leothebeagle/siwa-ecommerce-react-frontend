@@ -2,14 +2,14 @@ import React from 'react';
 
 const Hero = props => {
         return(
-            <div className="hero">
-                <header>
+            <section className="hero">
+                <header className="hero-header">
                     <h1>The Title of Your Hero Image</h1>
                 </header>
-                <footer>
-                    <h3>Your Call To Action Button</h3>
+                <footer className="hero-footer">
+                    <a href="/items">Shop Now</a>
                 </footer>
-            </div>
+            </section>
         )
 };
 
