@@ -2,12 +2,12 @@ import React from 'react';
 
 const Hero = props => {
         return(
-            <section className="hero">
+            <section className="hero-container">
                 <header className="hero-header">
                     <h1>The Title of Your Hero Image</h1>
                 </header>
                 <footer className="hero-footer">
-                    <a href="/items">Shop Now</a>
+                    <button><a href="/items">Shop Now</a></button>
                 </footer>
             </section>
         )

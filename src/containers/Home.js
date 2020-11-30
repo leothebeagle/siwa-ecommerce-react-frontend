@@ -9,7 +9,7 @@ class Home extends Component {
     
     render() {
         return(
-            <div className="top-container">
+            <div className="home-container">
                 <Navbar handleLogoutClick={this.props.handleLogoutClick} user={this.props.user} />
                 <Hero />
             </div>
