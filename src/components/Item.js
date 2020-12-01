@@ -2,7 +2,7 @@ import React from 'react';
 
 const Item = props => {
     return(
-        <div>
+        <div className="item-container">
         
             <h4>{props.item.name}</h4> <br></br>
             <img src={props.item.image}></img>
