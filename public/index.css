@@ -8,6 +8,10 @@ li, a{
     text-decoration: none;
 }
 
+body {
+    background: #DDDFE7; 
+}
+
 .home-container {
     background: #DDDFE7;
     display: flex;
@@ -112,13 +116,25 @@ a:visited{
 .items-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
-.item-container {
-    width: 20vw;
+.item-card {
+    /* width: 20vw;
     display: flex;
-    flex-direction: column;
-
+    flex-direction: column; */
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 16%;
 }
+
+.item-image {
+    max-width: 100%;
+}
+
+.item-info {
+    margin-top: auto;
+}
+
+
 
