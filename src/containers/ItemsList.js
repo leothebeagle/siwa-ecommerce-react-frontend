@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Item from '../components/Item';
 import {addItemToCart} from '../actions/cartActions';
-import Hero from '../components/Hero';
 // import {deleteCartItem} from '../actions/cartActions
-
+import {logoutUser} from '../actions/userActions';
+import Navbar from '../components/Navbar'
 const ItemsList = (props) => {
 
     const handleAddToCartClick = (item) => {
@@ -17,19 +17,24 @@ const ItemsList = (props) => {
     const items = props.items.map(item => <Item item={item} handleButtonClick={() => handleAddToCartClick(item)} buttonText={buttonText}/>)
     
     return(
+        <>
+        <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
         <div className="items-container">
             {items}
         </div>
+        </>
     )
 }
 
 const mapDispatchToProps = dispatch => ({
-    addItemToCart: (item, cartId) => dispatch(addItemToCart(item, cartId))
+    addItemToCart: (item, cartId) => dispatch(addItemToCart(item, cartId)),
+    handleLogoutClick: () => dispatch(logoutUser())
 });
 
 const mapStateToProps = state => ({
      items: state.items.itemList,
-     cartId: state.cart.cartId
+     cartId: state.cart.cartId,
+     user: state.user
 });
 
 
