@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Cart from '../components/Cart';
 import { placeOrder, removeFromCart } from '../actions/cartActions';
+import {logoutUser} from '../actions/userActions';
+import Navbar from '../components/Navbar';
 
 const CartPage = (props) => { 
     // the CartPage calls cart, and passes it a list of items in the cart, a function to handle submitting
@@ -19,25 +21,29 @@ const CartPage = (props) => {
     // you should define a fn here called handleDeleteItem(item) that calls props.deleteItem(item)
 
     return(
-        <div>
-            <Cart cartItems={props.cartItems} total={props.total} submitOrder={handleSubmitOrder} handleButtonClick={(item) => handleDeleteItem(item)}/>
-            {/* you should pass in a fn that will be passed on by Cart into item that handles deleting an item */}
-            {/* handleButtonClick={handleDeleteItem(item)} */}
-        </div>
+        <>
+            <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
+            <div>
+                <Cart cartItems={props.cartItems} total={props.total} submitOrder={handleSubmitOrder} handleButtonClick={(item) => handleDeleteItem(item)}/>
+                {/* you should pass in a fn that will be passed on by Cart into item that handles deleting an item */}
+                {/* handleButtonClick={handleDeleteItem(item)} */}
+            </div>
+        </>
     )
 };
 
 const mapDispatchToProps = dispatch => ({
     submitOrder: () => dispatch(placeOrder()),
-    removeFromCart: (item, cartId) => dispatch(removeFromCart(item, cartId))
-    // include a dispatch to delete an item
+    removeFromCart: (item, cartId) => dispatch(removeFromCart(item, cartId)),
+    handleLogoutClick: () => dispatch(logoutUser())
 });
 
 
 const mapStateToProps = state => ({
      cartItems: state.cart.cartItems,
      cartId: state.cart.cartId,
-     total: state.cart.total
+     total: state.cart.total,
+     user: state.user
 });
 
 

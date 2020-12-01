@@ -4,7 +4,8 @@ import Item from '../components/Item';
 import {addItemToCart} from '../actions/cartActions';
 // import {deleteCartItem} from '../actions/cartActions
 import {logoutUser} from '../actions/userActions';
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
+
 const ItemsList = (props) => {
 
     const handleAddToCartClick = (item) => {
@@ -19,9 +20,9 @@ const ItemsList = (props) => {
     return(
         <>
         <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
-        <div className="items-container">
+        <section className="items-container">
             {items}
-        </div>
+        </section>
         </>
     )
 }

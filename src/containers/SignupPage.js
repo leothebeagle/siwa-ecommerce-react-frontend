@@ -5,6 +5,9 @@ import { Redirect } from 'react-router';
 import SignupForm from '../components/SignupForm';
 import {registerUser} from '../actions/userActions';
 
+import {logoutUser} from '../actions/userActions';
+import Navbar from '../components/Navbar';
+
 const SignupPage = (props) => {
 
     const [formState, setFormState] = useState({
@@ -33,14 +36,18 @@ const SignupPage = (props) => {
     }
 
     return(
-        <div>
-            <SignupForm handleSubmit={handleSubmit} handleChange={handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
-        </div>
+        <>
+            <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
+            <div>
+                <SignupForm handleSubmit={handleSubmit} handleChange={handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
+            </div>
+        </>
     )
 }
     
 const mapDispatchToProps = dispatch => ({
-    registerUser: user => dispatch(registerUser(user))
+    registerUser: user => dispatch(registerUser(user)),
+    handleLogoutClick: () => dispatch(logoutUser())
 })
 
 const mapStateToProps = state => ({
