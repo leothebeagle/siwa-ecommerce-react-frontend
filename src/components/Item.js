@@ -10,7 +10,6 @@ const Item = props => {
 
             <div className="item-info">
                 <h4>{props.item.name}</h4> <br></br>
-                <p>{props.item.description}</p>
                 <p>${props.item.price}</p>
             </div>
 
