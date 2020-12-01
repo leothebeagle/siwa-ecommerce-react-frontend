@@ -5,7 +5,7 @@ import Logout from './Logout';
 const Navbar = props => {  
     return (
         <div className="navbar-container">
-            <NavLink to='/' className="logo-container"> <img src={"./assets/woodland.svg"} className="logo-image"></img> </NavLink>
+            <NavLink to='/' className="logo-container"> <img src={"./assets/grow-shop.svg"} className="logo-image"></img> </NavLink>
             <nav>
                 <ul className="nav-links">
                     <li><NavLink to='/items'>Shop</NavLink></li>
