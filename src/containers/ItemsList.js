@@ -17,7 +17,7 @@ const ItemsList = (props) => {
     const items = props.items.map(item => <Item item={item} handleButtonClick={() => handleAddToCartClick(item)} buttonText={buttonText}/>)
     
     return(
-        <div>
+        <div className="items-container">
             {items}
         </div>
     )
