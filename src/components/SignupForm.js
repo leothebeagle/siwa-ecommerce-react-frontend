@@ -9,8 +9,7 @@ const SignupForm = (props) => {
         
     return(
         <div>
-            <h4>Signup form</h4>
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} className="signup-form">
                 <input onChange={handleChange} type="text" name="firstName" value={props.firstName} placeholder="First Name" />
                 <input onChange={handleChange} type="text" name="lastName" value={props.lastName} placeholder="Last Name"/>
                 <input onChange={handleChange} type="email" name="email" value={props.email} placeholder="email"/>

@@ -37,7 +37,7 @@ class LoginPage extends React.Component {
         return(
             <>
                 <Navbar handleLogoutClick={this.props.handleLogoutClick} user={this.props.user} />
-                <div>
+                <div className="login-container">
                     <LoginForm handleSubmit={this.handleSubmit} handleChange={this.handleChange}  email={email} password={password} />
                 </div>
             </>

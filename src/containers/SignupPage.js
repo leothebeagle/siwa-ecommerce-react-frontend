@@ -38,7 +38,7 @@ const SignupPage = (props) => {
     return(
         <>
             <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
-            <div>
+            <div className="signup-container">
                 <SignupForm handleSubmit={handleSubmit} handleChange={handleChange} firstName={firstName} lastName={lastName} email={email} password={password} passwordConfirmation={passwordConfirmation} />
             </div>
         </>
