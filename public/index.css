@@ -117,6 +117,7 @@ a:visited{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content:center;
 }
 
 .item-card {
@@ -128,7 +129,7 @@ a:visited{
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    margin-right: auto;
+    /* margin-right: auto; */
 }
 
 .item-card:hover {
@@ -136,7 +137,8 @@ a:visited{
 }
 
 .item-image {
-    
+   height: 150px;
+   width:150px;
 }
 
 .item-image img {
@@ -178,6 +180,27 @@ a:visited{
     padding: 10px;
     margin: 10px;
 }
+
+.cart-container {
+    
+}
+
+.cart-items-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-info {
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-total {
+    margin-bottom: 30px;
+}
+
 
 
 

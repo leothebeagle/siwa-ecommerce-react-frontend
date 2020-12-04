@@ -13,13 +13,15 @@ const Cart = (props) => {
     // over here you should also pass in button text. 
     
     return(
-        <div>
-            <h4>Shopping Cart</h4>
-            <h3>Cart total: ${props.total}</h3>
+        <div className="cart-container">    
+            <section className="cart-items-container">
+                <div className="items-container">{cartItems}</div>
 
-            {cartItems}
-
-            <button onClick={props.submitOrder}>Place Order</button>
+                <div className="cart-info">
+                    <h3 className="cart-total">Cart total: ${props.total}</h3>
+                    <button onClick={props.submitOrder}>Place Order</button>
+                </div>
+            </section>
         </div>
     )
 }
