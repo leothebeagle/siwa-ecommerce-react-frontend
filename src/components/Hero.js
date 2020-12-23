@@ -5,7 +5,7 @@ const Hero = props => {
             <section className="hero-container">
                 <div className="hero-left">
                     <header className="hero-header">
-                        <h1>The Best Shopping</h1>
+                        <h1>Shop Your Holiday Favorites</h1>
                     </header>
                     <footer className="hero-footer">
                         <button><a href="/items">Shop Now</a></button>
