@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Item from '../components/Item';
 import {addItemToCart} from '../actions/cartActions';
+import {filterItems } from '../actions/itemActions';
 // import {deleteCartItem} from '../actions/cartActions
 import {logoutUser} from '../actions/userActions';
 import Navbar from '../components/Navbar';
+
+import Filter from '../components/Filter';
 
 const ItemsList = (props) => {
 
@@ -20,6 +23,7 @@ const ItemsList = (props) => {
     return(
         <>
         <Navbar handleLogoutClick={props.handleLogoutClick} user={props.user} />
+        <Filter filterItems={props.filterItems} />
         <section className="items-container">
             {items}
         </section>
@@ -29,7 +33,8 @@ const ItemsList = (props) => {
 
 const mapDispatchToProps = dispatch => ({
     addItemToCart: (item, cartId) => dispatch(addItemToCart(item, cartId)),
-    handleLogoutClick: () => dispatch(logoutUser())
+    handleLogoutClick: () => dispatch(logoutUser()),
+    filterItems: (selection) => dispatch(filterItems(selection))
 });
 
 const mapStateToProps = state => ({
