@@ -16,3 +16,16 @@ export const fetchItems = () => {
         })
     }
 }
+
+export const filterItems = (selection) => {
+    const ourUrl = new URL('http://localhost:3000/items')
+    ourUrl.searchParams.set('q', selection)
+    // double check that the correct endpoint is being used. 
+    return (dispatch) => {        
+        fetch(ourUrl, {credentials: 'include'}) 
+        .then(resp => resp.json())
+        .then(resp => {
+            dispatch(addItems(resp))
+        })
+    }
+}
